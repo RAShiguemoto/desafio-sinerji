@@ -2,6 +2,7 @@ package com.rashiguemoto.desafio.sinerji.controle;
 
 import com.rashiguemoto.desafio.sinerji.entidade.Pessoa;
 import com.rashiguemoto.desafio.sinerji.facade.PessoaFacade;
+import com.rashiguemoto.desafio.sinerji.service.PessoaService;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -22,22 +23,18 @@ public class PessoaControle {
     private List<Pessoa> pessoas = new ArrayList<>();
     
     @EJB
-    private PessoaFacade pessoaFacade;
+    private PessoaService pessoaService;
     
     public void listar() {
-        pessoas = pessoaFacade.listar();
+        pessoas = pessoaService.listar();
     }
     
     public void novo() {
-        if (paramId != null) {
-            pessoa = pessoaFacade.buscarPorId(paramId);
-        } else {
-            pessoa = new Pessoa();
-        }
+        pessoa = pessoaService.novo(paramId);
     } 
     
     public String salvar() {
-        pessoaFacade.salvar(pessoa);
+        pessoaService.salvar(pessoa);
         return "list?faces-redirect=true";
     }
     
@@ -46,7 +43,7 @@ public class PessoaControle {
     }
     
     public void excluir(Pessoa pes) {
-        pessoaFacade.excluir(pes);
+        pessoaService.excluir(pes);
         listar();
     }
 }
