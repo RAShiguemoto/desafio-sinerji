@@ -1,4 +1,6 @@
-com\rashiguemoto\desafio\sinerji\entidade\Endereco_.class
 com\rashiguemoto\desafio\sinerji\entidade\Pessoa.class
 com\rashiguemoto\desafio\sinerji\entidade\Pessoa_.class
 com\rashiguemoto\desafio\sinerji\entidade\Endereco.class
+com\rashiguemoto\desafio\sinerji\entidade\Endereco_.class
+com\rashiguemoto\desafio\sinerji\facade\PessoaFacade.class
+com\rashiguemoto\desafio\sinerji\facade\EnderecoFacade.class
