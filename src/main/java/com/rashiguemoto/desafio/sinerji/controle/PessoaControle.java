@@ -1,7 +1,6 @@
 package com.rashiguemoto.desafio.sinerji.controle;
 
 import com.rashiguemoto.desafio.sinerji.entidade.Pessoa;
-import com.rashiguemoto.desafio.sinerji.facade.PessoaFacade;
 import com.rashiguemoto.desafio.sinerji.service.PessoaService;
 import java.util.ArrayList;
 import java.util.List;

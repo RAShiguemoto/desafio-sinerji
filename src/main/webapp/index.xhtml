@@ -1,15 +1,25 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="WEB-INF/template/layout.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <h:head>
-    </h:head>
+    <ui:define name="content">
+        <h:form>
+            <div class="container">
+                <h:commandLink title="Cadastro de Pessoa" action="/pessoa/list?faces-redirect=true">
+                    <div class="cardIndex">
+                        <i class="pi pi-user"/> <br/>
+                        <p:outputLabel value="Pessoa"/>
+                    </div>
+                </h:commandLink>
 
-    <h:body>
-        <p:spinner />
-    </h:body>
-</html>
-
+                <h:commandLink title="Cadastro de Endereço" action="/propriedade/list?faces-redirect=true">
+                    <div class="cardIndex">
+                        <i class="pi pi-map-marker"/> <br/>
+                        <p:outputLabel value="Endereço"/>
+                    </div>
+                </h:commandLink>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

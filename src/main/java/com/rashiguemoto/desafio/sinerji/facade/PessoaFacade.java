@@ -30,6 +30,6 @@ public class PessoaFacade {
     }
     
     public void excluir(Pessoa pessoa) {
-        em.remove(pessoa);
+        em.remove(em.merge(pessoa));
     }
 }

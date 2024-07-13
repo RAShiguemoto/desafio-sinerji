@@ -25,11 +25,19 @@ public class PessoaService {
     }
     
     public void salvar(Pessoa pessoa) {
-        pessoaFacade.salvar(pessoa);
+        Pessoa pessoaParaSalvar = converterParaMaiusculas(pessoa);
+        pessoaFacade.salvar(pessoaParaSalvar);
     }
     
     public void excluir(Pessoa pessoa) {
         pessoaFacade.excluir(pessoa);
-        listar();
+    }
+    
+    private Pessoa converterParaMaiusculas(Pessoa pessoa) {
+        if (pessoa.getNome() != null) {
+            pessoa.setNome(pessoa.getNome().toUpperCase());
+        }
+        
+        return pessoa;
     }
 }

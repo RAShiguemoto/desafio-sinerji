@@ -12,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.Getter;
@@ -32,14 +34,14 @@ public class Pessoa implements Serializable {
     private String nome;
     
     @Temporal(TemporalType.DATE)
-    private Date idade;
+    private Date nascimento;
     
     @Column(length = 2)
     private String sexo;
     
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
-
+    
     @Override
     public int hashCode() {
         int hash = 3;

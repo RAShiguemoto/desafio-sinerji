@@ -1,0 +1,54 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/template/layout.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <f:metadata>
+            <f:viewParam name="id" value="#{pessoaControle.paramId}"/>
+            <f:viewAction action="#{pessoaControle.novo()}"/>
+        </f:metadata>
+
+        <div class="divTitle">
+            <p:outputLabel value="Cadastro de Cliente" class="title"/>
+        </div>
+
+        <h:form>
+            <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">
+                <div class="ui-lg-8 ui-fluid" style="padding: 0.3125rem">
+                    <p:outputLabel for="nome" value="Nome:"/>
+                    <p:inputText id="nome" class="textUpperCase" value="#{pessoaControle.pessoa.nome}" style="width: 100%; margin-top: 0.3125rem"/> 
+                </div>
+                
+                <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
+                    <p:outputLabel for="nascimento" value="Nascimento:"/>
+                    <p:datePicker id="nascimento" value="#{pessoaControle.pessoa.nascimento}" style="width: 100%; margin-top: 0.3125rem"/>
+                </div>
+            </div>
+            
+            <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">                
+                <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
+                    <p:outputLabel for="sexo" value="Sexo:"/>
+                    <p:selectOneRadio id="sexo" value="#{pessoaControle.pessoa.sexo}" layout="lineDirection">
+                        <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                        <f:selectItem itemLabel="Feminino" itemValue="F"/>
+                    </p:selectOneRadio>
+                </div>
+            </div>
+
+            <div class="btnGroup mt30">
+                <p:commandButton value="Salvar" 
+                                 action="#{pessoaControle.salvar()}" 
+                                 styleClass="ui-button-success" 
+                                 icon="pi pi-save"/>
+
+                <p:commandButton value="Cancelar" 
+                                 action="list?faces-redirect=true" 
+                                 styleClass="ui-button-secondary" 
+                                 style="margin-left: 0.625rem"
+                                 icon="pi pi-save"/>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
