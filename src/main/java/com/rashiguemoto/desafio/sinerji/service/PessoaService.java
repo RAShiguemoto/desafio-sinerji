@@ -1,6 +1,7 @@
 package com.rashiguemoto.desafio.sinerji.service;
 
 import com.rashiguemoto.desafio.sinerji.entidade.Pessoa;
+import com.rashiguemoto.desafio.sinerji.facade.EnderecoFacade;
 import com.rashiguemoto.desafio.sinerji.facade.PessoaFacade;
 import java.util.List;
 import javax.ejb.EJB;
@@ -11,6 +12,8 @@ public class PessoaService {
 
     @EJB
     private PessoaFacade pessoaFacade;
+    @EJB
+    private EnderecoFacade enderecoFacade;
 
     public List<Pessoa> listar() {
         return pessoaFacade.listar();
@@ -18,7 +21,7 @@ public class PessoaService {
 
     public Pessoa novo(Long paramId) {
         if (paramId != null) {
-            return pessoaFacade.buscarPorId(paramId);
+            return pessoaFacade.buscarPorIdPessoaComEndereco(paramId);
         }
 
         return new Pessoa();

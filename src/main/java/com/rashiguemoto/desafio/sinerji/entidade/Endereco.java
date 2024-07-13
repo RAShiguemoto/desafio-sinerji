@@ -44,7 +44,8 @@ public class Endereco implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.logradouro);
         return hash;
     }
 
@@ -60,6 +61,9 @@ public class Endereco implements Serializable {
             return false;
         }
         final Endereco other = (Endereco) obj;
+        if (!Objects.equals(this.logradouro, other.logradouro)) {
+            return false;
+        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

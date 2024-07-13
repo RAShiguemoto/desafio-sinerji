@@ -1,8 +1,9 @@
-<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                template="/WEB-INF/template/layout.xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/template/layout.xhtml">
 
     <ui:define name="content">
         <f:metadata>
@@ -10,23 +11,38 @@
             <f:viewAction action="#{pessoaControle.novo()}"/>
         </f:metadata>
 
+        <p:focus for="form:nome"/>
+
         <div class="divTitle">
             <p:outputLabel value="Cadastro de Cliente" class="title"/>
         </div>
 
-        <h:form>
+        <h:form id="form">
+            <div class="ui-lg-8 ui-fluid divCorpo" style="display: flex; margin-left: 16.66%">
+                <p:messages id="msg" showSummary="true" closable="true" style="width: 100%"/>
+            </div>
+
             <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">
                 <div class="ui-lg-8 ui-fluid" style="padding: 0.3125rem">
                     <p:outputLabel for="nome" value="Nome:"/>
-                    <p:inputText id="nome" class="textUpperCase" value="#{pessoaControle.pessoa.nome}" style="width: 100%; margin-top: 0.3125rem"/> 
+                    <p:inputText id="nome"
+                                 value="#{pessoaControle.pessoa.nome}"
+                                 required="true"
+                                 requiredMessage="Nome é obrigatório!"
+                                 style="width: 100%; margin-top: 0.3125rem"
+                                 class="textUpperCase"/> 
                 </div>
-                
+
                 <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
                     <p:outputLabel for="nascimento" value="Nascimento:"/>
-                    <p:datePicker id="nascimento" value="#{pessoaControle.pessoa.nascimento}" style="width: 100%; margin-top: 0.3125rem"/>
+                    <p:datePicker id="nascimento"
+                                  required="true"
+                                  requiredMessage="Nascimento é obrigatório!"
+                                  value="#{pessoaControle.pessoa.nascimento}" 
+                                  style="width: 100%; margin-top: 0.3125rem"/>
                 </div>
             </div>
-            
+
             <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">                
                 <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
                     <p:outputLabel for="sexo" value="Sexo:"/>
@@ -37,9 +53,58 @@
                 </div>
             </div>
 
+            <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">
+                <p:commandButton value="Incluir Endereço" 
+                                 actionListener="#{pessoaControle.novoEndereco()}"
+                                 immediate="true"
+                                 styleClass="ui-button-info"
+                                 icon="pi pi-plus"/>
+            </div>
+
+            <div class="ui-lg-8 divCorpo" style="display: flex; margin-left: 16.66%">                
+                <div class="ui-lg-12 ui-fluid" style="padding: 0.3125rem">
+                    <p:dataTable id="tabela" 
+                                 var="endereco" 
+                                 value="#{pessoaControle.pessoa.enderecos}" 
+                                 paginator="true" 
+                                 paginatorPosition="bottom" 
+                                 rows="5"
+                                 emptyMessage="Nenhum endereço cadastrado.">
+
+                        <p:column headerText="Código" width="5%" style="text-align: center">
+                            <h:outputText value="#{endereco.id}" />
+                        </p:column>
+
+                        <p:column headerText="Logradouro" width="20%" style="text-align: center">
+                            <h:outputText value="#{endereco.logradouro}" />
+                        </p:column>
+
+                        <p:column headerText="Nº" width="5%" style="text-align: center">
+                            <h:outputText value="#{endereco.numero}" />
+                        </p:column>
+
+                        <p:column headerText="CEP" width="10%" style="text-align: center">
+                            <h:outputText value="#{endereco.cep}" />
+                        </p:column>
+
+                        <p:column headerText="Cidade" width="20%" style="text-align: center">
+                            <h:outputText value="#{endereco.cidade}" />
+                        </p:column>
+
+                        <p:column headerText="Remover" width="5%" style="text-align: center">
+                            <p:commandLink actionListener="#{pessoaControle.removerEndereco(endereco)}" immediate="true" update="form:tabela">
+                                <i class="pi pi-trash"/>
+                            </p:commandLink>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </div>
+
             <div class="btnGroup mt30">
                 <p:commandButton value="Salvar" 
                                  action="#{pessoaControle.salvar()}" 
+                                 update="form:nome form:nascimento form:msg"
+                                 process="@form"
                                  styleClass="ui-button-success" 
                                  icon="pi pi-save"/>
 
@@ -49,6 +114,95 @@
                                  style="margin-left: 0.625rem"
                                  icon="pi pi-save"/>
             </div>
+        </h:form>
+
+        <h:form id="dialogForm">
+            <p:dialog header="Incluir Endereço"
+                      widgetVar="dialogEndereco"
+                      modal="true"
+                      height="400"
+                      width="600"
+                      resizable="false"
+                      draggable="true">
+
+                <h:panelGroup id="enderecoFormGroup">
+
+                    <p:messages showSummary="true" closable="true"/>
+
+                    <div class="ui-lg-12 ui-fluid">
+                        <p:outputLabel for="logradouro" value="Logradouro:"/>
+                        <p:inputText id="logradouro"
+                                     value="#{pessoaControle.endereco.logradouro}" 
+                                     required="true"
+                                     requiredMessage="Logradouro é obrigatório!"
+                                     style="margin-top: 0.3125rem"
+                                     class="textUpperCase" /> 
+                    </div>
+
+                    <div class="ui-lg-12 ui-fluid" style="display: flex">
+                        <div class="ui-lg-6 ui-fluid">
+                            <p:outputLabel for="numero" value="Número:"/>
+                            <p:inputText id="numero" 
+                                         value="#{pessoaControle.endereco.numero}" 
+                                         required="true"
+                                         requiredMessage="Número é obrigatório!"
+                                         style="margin-top: 0.3125rem"/> 
+                        </div>
+
+                        <div class="ui-lg-6 ui-fluid">
+                            <p:outputLabel for="cep" value="CEP:"/>
+                            <p:inputText id="cep" 
+                                         value="#{pessoaControle.endereco.cep}" 
+                                         required="true"
+                                         requiredMessage="CEP é obrigatório!"
+                                         style="margin-top: 0.3125rem"/> 
+                        </div>
+                    </div>
+
+                    <div class="ui-lg-12 ui-fluid" style="display: flex">
+                        <div class="ui-lg-6 ui-fluid">
+                            <p:outputLabel for="cidade" value="Cidade:"/>
+                            <p:inputText id="cidade" 
+                                         value="#{pessoaControle.endereco.cidade}" 
+                                         required="true"
+                                         requiredMessage="Cidade é obrigatória!"
+                                         style="margin-top: 0.3125rem"
+                                         class="textUpperCase"/> 
+                        </div>
+
+                        <div class="ui-lg-6 ui-fluid">
+                            <p:outputLabel for="estado" value="Estado"/>
+                            <p:inputText id="estado" 
+                                         value="#{pessoaControle.endereco.estado}"
+                                         required="true"
+                                         requiredMessage="Estado é obrigatório!"
+                                         style="margin-top: 0.3125rem"
+                                         class="textUpperCase"/> 
+                        </div>
+                    </div>
+
+                </h:panelGroup>
+
+                <div class="ui-lg-12 ui-fluid" style="display: flex; margin-top: 20px">
+                    <div class="ui-lg-6 ui-fluid">
+                        <p:commandButton value="Confirmar" 
+                                         action="#{pessoaControle.addEndereco()}"
+                                         update="dialogForm:enderecoFormGroup form:tabela"
+                                         process="@form"
+                                         oncomplete="if (args &amp;&amp; !args.validationFailed) PF('dialogEndereco').hide();"
+                                         styleClass="ui-button-success" 
+                                         icon="pi pi-save"/>
+                    </div>
+
+                    <div class="ui-lg-6 ui-fluid">
+                        <p:commandButton value="Cancelar" 
+                                         onclick="PF('dialogEndereco').hide()" 
+                                         styleClass="ui-button-secondary" 
+                                         style="margin-left: 0.625rem"
+                                         icon="pi pi-save"/> 
+                    </div>
+                </div>
+            </p:dialog>
         </h:form>
     </ui:define>
 </ui:composition>

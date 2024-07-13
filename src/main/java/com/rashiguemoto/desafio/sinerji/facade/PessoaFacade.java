@@ -25,6 +25,16 @@ public class PessoaFacade {
         return (Pessoa) query.getSingleResult();
     }
     
+    public Pessoa buscarPorIdPessoaComEndereco(Long id) {
+        Query query = em.createQuery("FROM Pessoa AS p "
+                + "LEFT JOIN FETCH p.enderecos "
+                + "WHERE p.id = :id");
+        
+        query.setParameter("id", id);
+
+        return (Pessoa) query.getSingleResult();
+    }
+    
     public void salvar(Pessoa pessoa) {
         em.merge(pessoa);
     }
