@@ -41,6 +41,10 @@ public class Endereco implements Serializable {
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
+    
+    public String getCidadeLabel() {
+        return this.cidade + " - " + this.estado;
+    }
 
     @Override
     public int hashCode() {

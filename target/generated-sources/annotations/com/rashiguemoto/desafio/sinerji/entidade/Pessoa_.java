@@ -1,5 +1,6 @@
 package com.rashiguemoto.desafio.sinerji.entidade;
 
+import com.rashiguemoto.desafio.sinerji.enumerador.SexoPessoa;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.ListAttribute;
@@ -14,7 +15,7 @@ public abstract class Pessoa_ {
 	public static volatile ListAttribute<Pessoa, Endereco> enderecos;
 	public static volatile SingularAttribute<Pessoa, String> nome;
 	public static volatile SingularAttribute<Pessoa, Long> id;
-	public static volatile SingularAttribute<Pessoa, String> sexo;
+	public static volatile SingularAttribute<Pessoa, SexoPessoa> sexo;
 
 }
 

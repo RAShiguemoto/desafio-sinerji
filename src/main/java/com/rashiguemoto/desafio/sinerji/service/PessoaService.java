@@ -18,16 +18,16 @@ public class PessoaService {
         return pessoaFacade.listar();
     }
 
-    public Pessoa novo(Long paramId) {
-        if (paramId != null) {
-            return pessoaFacade.buscarPorIdPessoaComEndereco(paramId);
-        }
-
+    public Pessoa novo() {
         return new Pessoa();
     }
     
+    public Pessoa editar(Long paramId) {
+        return pessoaFacade.buscarPorIdPessoaComEndereco(paramId);
+    }
+    
     public void salvar(Pessoa pessoa) {
-        Pessoa pessoaParaSalvar = converterParaMaiusculas(pessoa);
+        Pessoa pessoaParaSalvar = transformarEmMaiusculas(pessoa);
         pessoaFacade.salvar(pessoaParaSalvar);
     }
     
@@ -35,7 +35,7 @@ public class PessoaService {
         pessoaFacade.excluir(pessoa);
     }
     
-    private Pessoa converterParaMaiusculas(Pessoa pessoa) {
+    private Pessoa transformarEmMaiusculas(Pessoa pessoa) {
         if (pessoa.getNome() != null) {
             pessoa.setNome(pessoa.getNome().toUpperCase());
         }
@@ -60,6 +60,14 @@ public class PessoaService {
         }
 
         return idade;
+    }
+    
+    public String exibirIdade(int idade) {
+        if (idade <= 0) {
+            return "";
+        }
+        
+        return idade + (idade == 1 ? " ano" : " anos");
     }
 
 }
