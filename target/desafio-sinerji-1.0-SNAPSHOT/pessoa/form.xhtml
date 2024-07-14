@@ -34,12 +34,19 @@
                 </div>
 
                 <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
-                    <p:outputLabel for="nascimento" value="Nascimento:"/>
-                    <p:datePicker id="nascimento"
-                                  required="true"
-                                  requiredMessage="Nascimento é obrigatório!"
-                                  value="#{pessoaControle.pessoa.nascimento}" 
-                                  style="width: 100%; margin-top: 0.3125rem"/>
+                    <h:panelGroup id="idade">
+                        <p:outputLabel for="nascimento" value="Nascimento: #{pessoaControle.exibirIdade()}"/>
+                        <p:datePicker id="nascimento"
+                                      required="true"
+                                      requiredMessage="Nascimento é obrigatório!"
+                                      value="#{pessoaControle.pessoa.nascimento}" 
+                                      style="width: 100%; margin-top: 0.3125rem">
+
+                            <p:ajax event="dateSelect" 
+                                    listener="#{pessoaControle.calcularIdade()}"
+                                    update="form"/>
+                        </p:datePicker>
+                    </h:panelGroup>
                 </div>
             </div>
 
@@ -47,8 +54,7 @@
                 <div class="ui-lg-4 ui-fluid" style="padding: 0.3125rem">
                     <p:outputLabel for="sexo" value="Sexo:"/>
                     <p:selectOneRadio id="sexo" value="#{pessoaControle.pessoa.sexo}" layout="lineDirection">
-                        <f:selectItem itemLabel="Masculino" itemValue="M"/>
-                        <f:selectItem itemLabel="Feminino" itemValue="F"/>
+                        <f:selectItems value="#{pessoaControle.sexosPessoa}" var="sexo" itemLabel="#{sexo.descricao}" itemValue="#{sexo}" />
                     </p:selectOneRadio>
                 </div>
             </div>

@@ -32,7 +32,8 @@ public class Endereco implements Serializable {
     @Column(length = 100)
     private String logradouro;
     
-    private int numero;
+    @Column(length = 10)
+    private String numero;
     
     @Column(length = 8)
     private String cep;

@@ -2,6 +2,7 @@ package com.rashiguemoto.desafio.sinerji.controle;
 
 import com.rashiguemoto.desafio.sinerji.entidade.Endereco;
 import com.rashiguemoto.desafio.sinerji.entidade.Pessoa;
+import com.rashiguemoto.desafio.sinerji.enumerador.SexoPessoa;
 import com.rashiguemoto.desafio.sinerji.service.PessoaService;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class PessoaControle {
     
     private Pessoa pessoa;
     private Endereco endereco = new Endereco();
+    private int idade;
     private Long paramId;
     
     private List<Pessoa> pessoas = new ArrayList<>();
@@ -33,6 +35,13 @@ public class PessoaControle {
     
     public void novo() {
         pessoa = pessoaService.novo(paramId);
+        
+        try {
+            idade = pessoaService.calcularIdade(pessoa.getNascimento());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     } 
     
     public String salvar() {
@@ -65,5 +74,23 @@ public class PessoaControle {
     
     public void removerEndereco(Endereco end) {
         pessoa.getEnderecos().remove(end);
+    }
+    
+    public void calcularIdade() {
+        idade = pessoaService.calcularIdade(pessoa.getNascimento());
+    }
+
+    public String exibirIdade() {
+        if (this.idade == 1) {
+            return this.idade + " ano";
+        } else if (this.idade > 1) {
+            return this.idade + " anos";
+        } else {
+            return "";
+        } 
+    }
+    
+    public SexoPessoa[] getSexosPessoa() {
+        return SexoPessoa.values();
     }
 }
