@@ -2,7 +2,7 @@
 
 Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
 
-## Tecnologias Utilizadas
+## 1. Tecnologias Utilizadas
 
 ### Backend:
   - Java EE;
@@ -19,18 +19,18 @@ Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvol
   - JSF;
   - PrimeFaces 12;
 
-## Arquitetura do Projeto
+## 2. Arquitetura do Projeto (Backend)
 
   - Camada de Controle: Gerencia os ManagedBeans;
   - Camada de Serviço: Contém a lógica de negócios;
   - Camada Facade: Responsável pela persistência e comunicação com o banco de dados;
   - Camada de Entidade: Define as entidades JPA.
 
-## Frontend
+## 3. Frontend
 
-O frontend foi desenvolvido com um template simples utilizando componentes do PrimeFaces versão 12.
+O frontend foi desenvolvido com um template simples utilizando JSF e componentes do PrimeFaces versão 12.
 
-## Melhorias Futuras
+## 4. Melhorias Futuras
 
 ### Frontend:
   - Aplicar mais práticas de clean code.
@@ -46,9 +46,7 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
 ### Relatórios:
   - Criar relatórios utilizando Jasper Reports.
 
-Como Subir a Aplicação
-
-## Para subir a aplicação, siga os passos abaixo:
+## 5. Para subir a aplicação, siga os passos abaixo:
 
 ### Criar Banco de Dados:
   - Crie um banco de dados PostgreSQL vazio com o nome desafio. As tabelas serão criadas automaticamente durante o deploy da aplicação.
@@ -59,7 +57,7 @@ Como Subir a Aplicação
 ### Fazer o Deploy:
   - Faça o deploy do arquivo .war no Payara Server. A versão utilizada foi a 4.1.
 
-## Capturas de tela
+## 6. Capturas de tela
   - Tela Inicial:
 ![image](https://github.com/user-attachments/assets/1c71222a-2781-49ed-b09e-955dd2abc4e3)
 
