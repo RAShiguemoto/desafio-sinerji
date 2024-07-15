@@ -3,7 +3,7 @@
 Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
 
 
-## 1. Tecnologias Utilizadas
+## 1. Tecnologias Utilizadas :keyboard:
 
 ### Backend:
   - Java EE;
