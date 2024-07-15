@@ -34,17 +34,17 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
 
 ### Frontend:
   - [ ] Aplicar mais práticas de clean code.
-  - Reduzir a utilização de estilos diretamente nos componentes, utilizando classes CSS em arquivos separados.
+  - [ ] Reduzir a utilização de estilos diretamente nos componentes, utilizando classes CSS em arquivos separados.
 
 ### Validações:
-  - Melhorar as validações de campos, tanto no frontend quanto no backend.
-  - Implementar Bean Validation, por exemplo.
+  - [ ] Melhorar as validações de campos, tanto no frontend quanto no backend.
+  - [ ] Implementar Bean Validation, por exemplo.
 
 ### Testes:
-  - Implementar mais testes unitários.
+  - [ ] Implementar mais testes unitários.
 
 ### Relatórios:
-  - Criar relatórios utilizando Jasper Reports.
+  - [ ] Criar relatórios utilizando Jasper Reports.
 
 ## 5. Para subir a aplicação, siga os passos abaixo:
 
