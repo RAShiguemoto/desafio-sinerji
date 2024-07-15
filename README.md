@@ -34,7 +34,7 @@ Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvol
 O frontend foi desenvolvido com um template simples utilizando JSF e componentes do PrimeFaces versão 12.
 
 
-## 4. Para subir a aplicação, siga os passos abaixo:
+## 4. Para subir a aplicação, siga os passos abaixo: :zap:
 
 ### Criar Banco de Dados:
   - Crie um banco de dados PostgreSQL vazio com o nome desafio. As tabelas serão criadas automaticamente durante o deploy da aplicação.
