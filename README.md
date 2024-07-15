@@ -30,16 +30,16 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
 
 ## Melhorias Futuras
 
-    Frontend:
-        Aplicar mais práticas de clean code.
-        Reduzir a utilização de estilos diretamente nos componentes, utilizando classes CSS em arquivos separados.
+### Frontend:
+  - Aplicar mais práticas de clean code.
+  - Reduzir a utilização de estilos diretamente nos componentes, utilizando classes CSS em arquivos separados.
 
-    Validações:
-        Melhorar as validações de campos, tanto no frontend quanto no backend.
-        Implementar Bean Validation, por exemplo.
+### Validações:
+  - Melhorar as validações de campos, tanto no frontend quanto no backend.
+  - Implementar Bean Validation, por exemplo.
 
-    Testes:
-        Implementar mais testes unitários.
+### Testes:
+  - Implementar mais testes unitários.
 
-    Relatórios:
-        Criar relatórios utilizando Jasper Reports.
+### Relatórios:
+  - Criar relatórios utilizando Jasper Reports.
