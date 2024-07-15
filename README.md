@@ -1,9 +1,9 @@
-#Projeto de CRUD de Pessoa com Relacionamento com Endereço
+# Projeto de CRUD de Pessoa com Relacionamento com Endereço
 
-##Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
+## Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
 Tecnologias Utilizadas
 
-###Backend:
+### Backend:
   - Java EE;
   - EJB;
   - JPA;
@@ -13,21 +13,22 @@ Tecnologias Utilizadas
   - JUnit;
   - PostgreSQL;
 
-###Frontend:
+### Frontend:
   - JSF;
   - PrimeFaces 12;
 
-##Arquitetura do Projeto
+## Arquitetura do Projeto
 
   - Camada de Controle: Gerencia os ManagedBeans;
   - Camada de Serviço: Contém a lógica de negócios;
   - Camada Facade: Responsável pela persistência e comunicação com o banco de dados;
   - Camada de Entidade: Define as entidades JPA.
 
-Frontend
+## Frontend
 
 O frontend foi desenvolvido com um template simples utilizando componentes do PrimeFaces versão 12.
-Melhorias Futuras
+
+## Melhorias Futuras
 
     Frontend:
         Aplicar mais práticas de clean code.
