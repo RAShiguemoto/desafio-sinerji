@@ -48,3 +48,7 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
   - Tela Inicial:
 ![image](https://github.com/user-attachments/assets/1c71222a-2781-49ed-b09e-955dd2abc4e3)
 
+  - Listagem de pessoas:
+![image](https://github.com/user-attachments/assets/6d2b0bb8-b20f-4d0a-93ad-3fd60f34f67a)
+
+
