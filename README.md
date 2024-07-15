@@ -46,6 +46,19 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
 ### Relatórios:
   - Criar relatórios utilizando Jasper Reports.
 
+Como Subir a Aplicação
+
+## Para subir a aplicação, siga os passos abaixo:
+
+### Criar Banco de Dados:
+  - Crie um banco de dados PostgreSQL vazio com o nome desafio. As tabelas serão criadas automaticamente durante o deploy da aplicação.
+
+### Gerar o .war:
+  - Gere um arquivo .war da aplicação utilizando comandos Maven ou uma IDE de sua preferência para fazer o build do projeto.
+
+### Fazer o Deploy:
+  - Faça o deploy do arquivo .war no Payara Server. A versão utilizada foi a 4.1.
+
 ## Capturas de tela
   - Tela Inicial:
 ![image](https://github.com/user-attachments/assets/1c71222a-2781-49ed-b09e-955dd2abc4e3)
