@@ -2,6 +2,7 @@
 
 Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
 
+
 ## 1. Tecnologias Utilizadas
 
 ### Backend:
@@ -19,6 +20,7 @@ Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvol
   - JSF;
   - PrimeFaces 12;
 
+
 ## 2. Arquitetura do Projeto (Backend)
 
   - Camada de Controle: Gerencia os ManagedBeans;
@@ -26,11 +28,25 @@ Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvol
   - Camada Facade: Responsável pela persistência e comunicação com o banco de dados;
   - Camada de Entidade: Define as entidades JPA.
 
+
 ## 3. Frontend
 
 O frontend foi desenvolvido com um template simples utilizando JSF e componentes do PrimeFaces versão 12.
 
-## 4. Melhorias Futuras
+
+## 4. Para subir a aplicação, siga os passos abaixo:
+
+### Criar Banco de Dados:
+  - Crie um banco de dados PostgreSQL vazio com o nome desafio. As tabelas serão criadas automaticamente durante o deploy da aplicação.
+
+### Gerar o .war:
+  - Gere um arquivo .war da aplicação utilizando comandos Maven ou uma IDE de sua preferência para fazer o build do projeto.
+
+### Fazer o Deploy:
+  - Faça o deploy do arquivo .war no Payara Server. A versão utilizada foi a 4.1.
+
+
+## 5. Melhorias Futuras
 
 ### Frontend:
   - [ ] Aplicar mais práticas de clean code.
@@ -46,16 +62,6 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
 ### Relatórios:
   - [ ] Criar relatórios utilizando Jasper Reports.
 
-## 5. Para subir a aplicação, siga os passos abaixo:
-
-### Criar Banco de Dados:
-  - Crie um banco de dados PostgreSQL vazio com o nome desafio. As tabelas serão criadas automaticamente durante o deploy da aplicação.
-
-### Gerar o .war:
-  - Gere um arquivo .war da aplicação utilizando comandos Maven ou uma IDE de sua preferência para fazer o build do projeto.
-
-### Fazer o Deploy:
-  - Faça o deploy do arquivo .war no Payara Server. A versão utilizada foi a 4.1.
 
 ## 6. Capturas de tela
   - Tela Inicial:
