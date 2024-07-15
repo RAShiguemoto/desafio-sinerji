@@ -46,7 +46,7 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
   - Faça o deploy do arquivo .war no Payara Server. A versão utilizada foi a 4.1.
 
 
-## 5. Melhorias Futuras
+## 5. Melhorias Futuras :chart:
 
 ### Frontend:
   - [ ] Aplicar mais práticas de clean code.
