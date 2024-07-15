@@ -63,7 +63,7 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
   - [ ] Criar relatórios utilizando Jasper Reports.
 
 
-## 6. Capturas de tela
+## 6. Capturas de tela :camera:
   - Tela Inicial:
 ![image](https://github.com/user-attachments/assets/1c71222a-2781-49ed-b09e-955dd2abc4e3)
 
