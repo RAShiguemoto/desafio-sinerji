@@ -33,7 +33,7 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
 ## 4. Melhorias Futuras
 
 ### Frontend:
-  - Aplicar mais práticas de clean code.
+  - [ ] Aplicar mais práticas de clean code.
   - Reduzir a utilização de estilos diretamente nos componentes, utilizando classes CSS em arquivos separados.
 
 ### Validações:
