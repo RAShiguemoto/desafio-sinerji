@@ -1,4 +1,4 @@
-# Projeto de CRUD de Pessoa com Relacionamento com Endereço
+# Projeto de CRUD de Pessoa / Endereço
 
 ## Este é um projeto desenvolvido como parte de um teste para uma vaga de desenvolvedor. Trata-se de um CRUD simples de pessoa, com relacionamento de uma pessoa podendo ter vários endereços.
 Tecnologias Utilizadas
@@ -43,3 +43,8 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
 
 ### Relatórios:
   - Criar relatórios utilizando Jasper Reports.
+
+## Capturas de tela
+  - Tela Inicial:
+![image](https://github.com/user-attachments/assets/1c71222a-2781-49ed-b09e-955dd2abc4e3)
+
