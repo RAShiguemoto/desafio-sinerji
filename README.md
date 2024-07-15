@@ -12,6 +12,7 @@ Tecnologias Utilizadas
   - Maven;
   - JUnit;
   - PostgreSQL;
+  - Payara Server.
 
 ### Frontend:
   - JSF;
@@ -50,5 +51,13 @@ O frontend foi desenvolvido com um template simples utilizando componentes do Pr
 
   - Listagem de pessoas:
 ![image](https://github.com/user-attachments/assets/6d2b0bb8-b20f-4d0a-93ad-3fd60f34f67a)
+
+  - Formulário de Pessoa:
+![image](https://github.com/user-attachments/assets/60647563-6d7a-411d-8fc8-c325fa281581)
+
+  - Dialog para cadastro de endereço:
+![image](https://github.com/user-attachments/assets/c025a876-b094-45dc-a87c-c462aa981bfc)
+
+
 
 
