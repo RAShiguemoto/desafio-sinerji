@@ -76,6 +76,7 @@ O frontend foi desenvolvido com um template simples utilizando JSF e componentes
   - Dialog para cadastro de endereço:
 ![image](https://github.com/user-attachments/assets/c025a876-b094-45dc-a87c-c462aa981bfc)
 
-
+## 7. Vídeo demonstrativo
+https://www.youtube.com/watch?v=ddFW4ut5agM
 
 
